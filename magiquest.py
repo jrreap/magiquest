@@ -17,11 +17,9 @@ COLUMN_COUNT = 45
 WIDTH = 16
 HEIGHT = 16
 
-MARGIN = 0
-
 # Figure out screen size based on the tile size
-SCREEN_WIDTH = (WIDTH + MARGIN) * COLUMN_COUNT + MARGIN
-SCREEN_HEIGHT = (HEIGHT + MARGIN) * ROW_COUNT + MARGIN
+SCREEN_WIDTH = WIDTH * COLUMN_COUNT
+SCREEN_HEIGHT = HEIGHT * ROW_COUNT
 
 
 class MagiQuest(arcade.Window):
@@ -55,8 +53,8 @@ class MagiQuest(arcade.Window):
 
         for row in range(COLUMN_COUNT):
             for column in range(ROW_COUNT):
-                x = column * (WIDTH + MARGIN) + (WIDTH / 2 + MARGIN)
-                y = row * (HEIGHT + MARGIN) + (HEIGHT / 2 + MARGIN)
+                x = column * WIDTH + (WIDTH / 2)
+                y = row * HEIGHT + (HEIGHT / 2)
 
                 sprite = None
 
